@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator 1</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .flex-row {
+        display: flex;
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    .binary, .unary, .ternary {
+        flex: 1;
+        border: 1px solid #ccc;
+        max-width: 300px;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .flex-row h3 {
+        background-color: antiquewhite;
+        width: 100%;
+    }
+</style>
+<body>
+    <div class="container">
+    <h1>Operator Pada Javascript</h1>
+    <p>Jenis - jenis Operator</p>
+    <ul>
+        <p style="font-style: italic;">Binary Operator</p>
+            <li>Aritmatika</li>
+            <li>Penugasan</li>
+            <li>Perbandingan</li>
+            <li>Logika</li>
+            <li>String</li>
+        <p style="font-style: italic;">Ternary Operator</p>
+            <li>Kondisional</li>
+        <p style="font-style: italic;">Unary Operator</p>
+            <li>Typeof</li>
+    </ul>
+    <br>
+    <br>
+    <div class="flex-row">
+    <div class="binary">
+        <h3>Binary</h3>
+        <p>Membutuhkan 2 Operand(angka)</p>
+        <p>operand1 <span style="font-weight: bold;">operator</span> operand2</p>
+        <p>contoh :  49 + 51</p>
+    </div>
+    <div class="unary">
+        <h3>Unary</h3>
+        <p>Membutuhkan 1 Operand(angka)</p>
+        <span style="font-weight: bold;">Operator</span> operand
+        <p>maupun sebaliknya</p>
+    </div>
+    <div class="ternary">
+        <h3>Ternary</h3>
+        <p>Operator yang membutuhkan 3 Operand</p>
+    </div>
+    </div>
+
+    <h3>operasi Aritmatika</h3>
+    <p>+, -, *, /, %</p>
+
+    <h3>Operator Precendence</h3>
+    <p>urutan operasi matematika</p>
+    <p>KuKaBaTaKu</p>
+    <p>kurung kali bagi tambah kurang</p>
+    () * / + -
+
+    <h3>Operator Penugasan / assigment</h3>
+    simbol tanda "="
+    <p>misal x = 10</p>
+    jadi akan menugaskan operand di sebelah kanan = dengan operand sebelah kiri =
+    <p>contoh lain</p>
+    = || += || -= || *= || /= || %=
+
+    <h3>Operator Perbandingan / Comparison</h3>
+    <ul>
+        <li>== ~ sama dengan</li>
+        <li>!= ~ tidak sama dengan</li>
+        <li>=== ~ strict sama dengan / perbandingan identitas</li>
+        <li>!== ~ strict tidak sama dengan</li>
+        <li>> ~ lebih besar dari</li>
+        <li>< ~ lebih kecil dari</li>
+        <li>>= ~ lebih besar sama dengan</li>
+        <li><= ~ lebih kecil sama dengan</li>
+    </ul>
+    *operator perbandingan ini nantinya akan menghasilkan boolean, true atau false
+    <p>contoh : 10 == 10 maka hasilnya true || 10 != 10 maka hasilnya false</p>
+    <p>meskipun ada string atau tanda kutip, Javascript akan menanggapnya angka</p>
+    <p>contoh : 10 == "10" maka hasilnya true</p>
+    === mengecek tipe datanya sama atau tidak
+    <p>contoh : 10 === "10" maka hasilnya false</p>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logika</title>
+</head>
+<body>
+    <h1>Logika, string, Typeof dan Kondisional</h1>
+    <hr>
+    <br><br>
+
+    <h2>Operator Logika</h2>
+
+    <p>ketika ada kondisi && (and) itu dua duanya harus true untuk hasilkan true,</p>
+    <p>kalau yang kiri true yang kanan false maka hasilnya pasti false</p>
+    <p>(x % 2 == 0) {ini hasilnya false. x nya 5}</p> 
+    <p>(x % 2 == 0) && (x < 10) {ini hasilnya false}</p>
+
+    <br>
+    =================================================
+    <br>
+    <p>ketika ada kondisi || (or) itu syaratnya jika salah satunya true, maka hasilnya true</p>
+    <p>kalau yang kiri true dan yang kanan false maka hasilnya pasti true</p>
+    <p>(x % 2 == 0) || (x < 10) {ini hasilnya false}</p>
+
+    <br>
+    =================================================
+    <br>
+    <p>ketika ada kondisi ! () itu syaratnya jika nilainya true, maka hasilnya false, dibalik</p>
+    <p>!(x < 10) {ini hasilnya false}</p>
+    <br><br>
+
+    <h2>Operator String</h2>
+    <p>Di Javascript, ada operator + yang mana fungsinya bisa 2. tergantung operand nya, jika operandnya angka maka akan menjadi perjumlahan, tapi jika operand nya string maka akan menjadi penggabung kata</p>
+    <p> contoh </p>
+    <p>a = "apple"</p>
+    <p>b = "pen"</p>
+    <p>a + b = applepen</p>
+    <p>*jika ingin ada jarak maka tinggal tambah saja jadi a + " " + b = apple pen</p>
+    <br>
+    <p>Jika angka dengan angka, maka hasilnya juga angka, tapi,</p>
+    <p>10 + 10 = 20</p>
+    <p>10 + "10" = 1010</p>
+    <p>10 + 10 + "10" = 2010</p>
+    <p>"10" + 10 + 10 = 101010</p>
+    <br><br>
+
+    <h2>Operator Typeof</h2>
+    <p>hanya butuh 1 operand untuk mengetahui type data</p>
+    <p>typeof(10) maka hasilnya number</p>
+    <p>typeof("10") maka hasilnya string</p>
+    <p>typeof(true) maka hasilnya boolean</p>
+    <br><br>
+    
+    <h2>Operator Kondisional</h2>
+    <p>(kondisi) ? benar : salah</p>
+    (x % 2 == 0) ? "genap" : "ganjil"
+
+</body>
+</html>
