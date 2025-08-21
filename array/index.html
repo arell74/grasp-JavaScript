@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Array</title>
+</head>
+<body>
+    <h1>Array</h1>
+    <h4>- secara umum:</h4>
+    <p><i>"susunan sistematis dari objek-objek yang serupa</i></p>
+
+    <h4>- menurut programming:</h4>
+    <p><i>"tipe data yang digunakan untuk mendeskripsikan kumpulan elemen(nilai atau variable), yang tiap-tiap elemennya memiliki index"</i></p>
+
+    <h4>- menurut pak Shandika Galih</h4>
+    <p><i>"array adalah variable yang lebih sakti. karena bisa menampung lebih dari satu nilai"</i></p>
+
+    <b>Kenapa array?</b>
+    <ul>
+        <li>mempermudah pengelolaan nilai/value/data</li>
+        <li>penelunsuran dan pencarian</li>
+        <li>manajemen memori</li>
+    </ul>
+
+    <b>Beberapa definisi array</b>
+    <ul>
+        <li>Variable jamak, yang mempunyai banyak elemen dan diacu dengan nama yang sama</li>
+        <li>Kumpulan pasangan key dan nilai / key and value pair</li>
+        <li>Key adalah index pada array dengan tipe data integer yang dimulai dari 0</li>
+        <li>Array pada javascript bertipe object</li>
+        <li>Array pada javascript memiliki fungsi/method length untuk menghitung jumlah elemen di dalamnya</li>
+        <li>Elemen pada array di javascript, mirip dengan php yaitu boleh memiliki tipe data yang berbeda</li>
+    </ul>
+
+    <h2>Key and value pair</h2>
+    <div class="kotak" style="width: 200px; height: 50px; border: 1px black solid; display: flex;">
+        <div class="kotak1" style="width: 40px; height: 50px; border: 1px black solid;">0
+            <div class="objek1" style="font-size: 13px;">kucing</div>
+        </div>
+        <div class="kotak2" style="width: 40px; height: 50px; border: 1px black solid;">1
+            <div class="objek1" style="font-size: 13px;">anjing</div>
+        </div>
+        <div class="kotak3" style="width: 40px; height: 50px; border: 1px black solid;">2
+            <div class="objek1" style="font-size: 13px;">tikus</div>
+        </div>
+        <div class="kotak4" style="width: 40px; height: 50px; border: 1px black solid;">3
+            <div class="objek1" style="font-size: 13px;">naga</div>
+        </div>
+        <div class="kotak5" style="width: 40px; height: 50px; border: 1px black solid;">4
+            <div class="objek1" style="font-size: 13px;">harimau</div>
+        </div>
+    </div>
+    <p>penulisan: </p>
+    <p>var binatang = ['kucing', 'anjing', 'tikus', 'naga', 'harimau']</p>
+    <b>atau</b>
+    <p>var binatang = []</p>
+    <p>binatang = ['kucing', 'anjing', 'tikus', 'naga', 'harimau']</p>
+
+    <p>console.log(binatang[3])</p>
+</body>
+<script>
+    var binatang = []
+    binatang = ['kucing', 'anjing', 'tikus', 'naga', 'harimau']
+    console.log(binatang[3]);
+    console.log(typeof(binatang));
+    console.log(binatang.length);
+
+    //array dengan tipe data yang berbeda
+    var myFunc = function() {
+        console.log('hello world');
+    }
+
+    var myArr = ['teks', 2, false, myFunc];
+
+    //array didalam array / ARRAY MULTI DIMENSI
+
+    var arrArr = ['cihuy', 2, true, myFunc, [3,4,5]];
+
+    console.log(arrArr[4][1]);
+</script>
+</html>
