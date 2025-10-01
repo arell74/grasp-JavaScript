@@ -1,0 +1,30 @@
+[
+    {
+        "nama" : "Raiden shogun",
+        "nrp" : "222310063090",
+        "email" : "raidensho@gmail.com",
+        "jurusan" : "teknik elektro",
+        "idDosenWali" : 1
+    },
+    {
+        "nama" : "Zani",
+        "nrp" : "222310063090",
+        "email" : "zanichi@gmail.com",
+        "jurusan" : "Manajemen",
+        "idDosenWali" : 1
+    },
+    {
+        "nama" : "Clorinde",
+        "nrp" : "222310063090",
+        "email" : "clorin@gmail.com",
+        "jurusan" : "teknik elektro",
+        "idDosenWali" : 1
+    },
+    {
+        "nama" : "Evelyn",
+        "nrp" : "22231063090",
+        "email" : "eve17@gmail.com",
+        "jurusan" : "Tata Rias",
+        "idDosenWali" : 1
+    }
+]
