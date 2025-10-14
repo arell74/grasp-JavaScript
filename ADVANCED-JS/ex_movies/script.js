@@ -1,80 +1,37 @@
-//JQuery ajax
-// $('.search-button').on('click', function() {
-
-//     $.ajax({
-//         url: 'http://www.omdbapi.com/?apikey=e18c5f67&s=' + $('.input-keyword').val(),
-//         success: results => {
-//             const movies = results.Search;
-//             let cards = '';
-//             movies.forEach(m => {
-//                 cards += showCards(m);
-//             });
-//             $('.movie-container').html(cards);
-
-//             // ketika button detail di klik
-//             $('.modal-movie-btn').on('click', function () {
-//                 $.ajax({
-//                     url: 'http://www.omdbapi.com/?apikey=e18c5f67&i=' + $(this).data('imdbid'),
-//                     success: m => {
-//                         const movieDetail = showMovies(m);
-//                         $('.modal-body').html(movieDetail);
-//                     },
-//                     error: (e) => {
-//                         console.log(e.responseText);
-//                     }
-//                             });
-//                         });
-//                     },
-//         error: (e) => {
-//             console.log(e.responseText);
-//         }
-//     });
-
-// });
-
-
-
-// fetch
-// const searchButton = document.querySelector(".search-button");
-// searchButton.addEventListener("click", function () {
-//   const inputKeyword = document.querySelector(".input-keyword");
-//   fetch("http://www.omdbapi.com/?apikey=e18c5f67&s=" + inputKeyword.value)
-//     .then((response) => response.json())
-//     .then((response) => {
-//       const movies = response.Search;
-//       let cards = "";
-//       movies.forEach((m) => (cards += showCards(m)));
-//       const movieContainer = document.querySelector(".movie-container");
-//       movieContainer.innerHTML = cards;
-
-//       // ketika tombol detail di klik
-//       const modalDetailButton = document.querySelectorAll(
-//         ".modal-movie-btn"
-//       );
-//       modalDetailButton.forEach((btn) => {
-//         btn.addEventListener("click", function () {
-//           const imdbid = this.dataset.imdbid;
-//           console.log(imdbid);
-//           fetch("http://www.omdbapi.com/?apikey=e18c5f67&i=" + imdbid)
-//             .then((response) => response.json())
-//             .then((m) => {
-//               const movieDetail = showMovies(m);
-//               const modalBody = document.querySelector(".modal-body");
-//               modalBody.innerHTML = movieDetail;
-//             });
-//         });
-//       });
-//     });
-// });
-
-
 // refactor
 const searchButton = document.querySelector('.search-button');
 searchButton.addEventListener('click', async function(){
+  try {
     const inputKeyword = document.querySelector('.input-keyword');
     const movies = await getMovies(inputKeyword.value);
     updateUI(movies);
+  } catch(err) {
+    alert(err);
+  }
 });
+
+function getMovies(keyword) {
+    return fetch('http://www.omdbapi.com/?apikey=e18c5f67&s=' + keyword)
+    .then(response => {
+      if(!response.ok) {
+        throw new Error(response.statusText)
+      }
+      return response.json();
+    })
+    .then(response => {
+      if (response.Response === "False") {
+        throw new Error(response.Error);
+      }
+      return response.Search;
+    });
+}
+
+function updateUI(movies) {
+  let cards = "";
+  movies.forEach((m) => (cards += showCards(m)));
+  const movieContainer = document.querySelector(".movie-container");
+  movieContainer.innerHTML = cards;
+}
 
 // event binding
 document.addEventListener('click', async function(e) {
@@ -94,19 +51,6 @@ function updateUIDetail(m) {
     const movieDetail = showMovies(m);
     const modalBody = document.querySelector(".modal-body");
     modalBody.innerHTML = movieDetail;
-}
-
-function getMovies(keyword) {
-    return fetch('http://www.omdbapi.com/?apikey=e18c5f67&s=' + keyword)
-    .then(response => response.json())
-    .then(response => response.Search);
-}
-
-function updateUI(movies) {
-  let cards = "";
-  movies.forEach((m) => (cards += showCards(m)));
-  const movieContainer = document.querySelector(".movie-container");
-  movieContainer.innerHTML = cards;
 }
 
 function showCards(m) {
